@@ -149,6 +149,7 @@
 				7DB317AC18F0F00100465211 /* Album.m */,
 				7D8D533118EFE4650052578A /* Images.xcassets */,
 				7D8D532818EFE4650052578A /* CoreDataPredicateDemo.xcdatamodeld */,
+				7DB317B418F10F8A00465211 /* testdata.json */,
 				7D8D531A18EFE4650052578A /* Supporting Files */,
 			);
 			path = CoreDataPredicateDemo;
@@ -157,7 +158,6 @@
 		7D8D531A18EFE4650052578A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7DB317B418F10F8A00465211 /* testdata.json */,
 				7D8D531B18EFE4650052578A /* CoreDataPredicateDemo-Info.plist */,
 				7D8D531C18EFE4650052578A /* InfoPlist.strings */,
 				7D8D531F18EFE4650052578A /* main.m */,
