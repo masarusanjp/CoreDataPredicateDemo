@@ -25,11 +25,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
     CDPAlbumInitializeService *initializeService = [[CDPAlbumInitializeService alloc] initWithManagedObjectContext:_managedObjectContext];
     [initializeService setupIfNeededWithResouceName:@"testdata.json"];
 }
@@ -117,6 +112,13 @@
     }
 }
 
+- (NSPredicate*)predicate {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SUBQUERY(songs,$s,$s.rating >= 1 AND $s.rating <= 4).@count > 0"];
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY songs.rating >= 1 AND ANY songs.rating <= 4"];
+    
+    return predicate;
+}
+
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -130,6 +132,8 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Album" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
+    [fetchRequest setPredicate:[self predicate]];
+    
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
@@ -141,7 +145,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     

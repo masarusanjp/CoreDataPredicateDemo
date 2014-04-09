@@ -141,6 +141,8 @@
 				7D8D532C18EFE4650052578A /* CDPMasterViewController.m */,
 				7D8D532E18EFE4650052578A /* CDPDetailViewController.h */,
 				7D8D532F18EFE4650052578A /* CDPDetailViewController.m */,
+				7DB317B118F10A1700465211 /* CDPAlbumInitializeService.h */,
+				7DB317B218F10A1700465211 /* CDPAlbumInitializeService.m */,
 				7DB317AE18F0F00200465211 /* Song.h */,
 				7DB317AF18F0F00200465211 /* Song.m */,
 				7DB317AB18F0F00100465211 /* Album.h */,
@@ -148,8 +150,6 @@
 				7D8D533118EFE4650052578A /* Images.xcassets */,
 				7D8D532818EFE4650052578A /* CoreDataPredicateDemo.xcdatamodeld */,
 				7D8D531A18EFE4650052578A /* Supporting Files */,
-				7DB317B118F10A1700465211 /* CDPAlbumInitializeService.h */,
-				7DB317B218F10A1700465211 /* CDPAlbumInitializeService.m */,
 			);
 			path = CoreDataPredicateDemo;
 			sourceTree = "<group>";

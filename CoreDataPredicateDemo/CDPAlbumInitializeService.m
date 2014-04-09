@@ -82,6 +82,8 @@
         song.name = songInfo[@"name"];
         song.duration = songInfo[@"duration"];
         song.artist = songInfo[@"artist"];
+        song.composer = songInfo[@"composer"];
+        song.rating = songInfo[@"rating"];
         NSNumber *playedAt = songInfo[@"playedAt"];
         if ([playedAt integerValue] != 0) {
             song.playedAt = [NSDate dateWithTimeIntervalSince1970:[playedAt unsignedIntegerValue]];
